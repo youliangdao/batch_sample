@@ -3,7 +3,7 @@ namespace :ranks do
     desc 'chapter2 ゲーム内のユーザーランキング情報を更新する'
     task update: :environment do
       # 現在のランキング情報をリセット
-      Ranks.delete_all
+      Rank.delete_all
 
       # ユーザーごとにスコアの合計を計算する
       user_total_scores = User.all.map do |user|
