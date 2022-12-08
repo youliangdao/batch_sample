@@ -13,7 +13,7 @@ namespace :ranks do
       # ユーザーごとのスコア合計の降順に並べ替え、そこからランキング情報を再作成する
       sorted_total_score_groups = user_total_scores
                   .group_by { |score| score[:total_score] }
-                  .sort_by { |score, _| sort * -1 }
+                  .sort_by { |score, _| score * -1 }
                   .to_h
                   .values
       sorted_total_score_groups.each.with_index(1) do |scores, index|
